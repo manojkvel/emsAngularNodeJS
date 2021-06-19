@@ -1,0 +1,50 @@
+<div class=" content">
+  <div class=" row">
+    <div class=" col-md-12">
+      <div class=" card">
+        <div class=" card-header">
+        <!--  <h4 class=" card-title">Variyas Inc</h4> -->
+        </div>
+        <div class=" card-body">
+          <h3 *ngIf=currentUser>Hi {{currentUser.lastName}}, {{currentUser.firstName}} welcome to EMS</h3>
+          <div class=" typography-line">
+  <!-- h3>
+    <span> <p>Welcome to Variyas!! </p> </span> </h3-->
+            <ngb-carousel>
+            <ng-template ngbSlide>
+                <img src="../assets/img/banner-1.jpg" alt="Consulting">
+                <div class="carousel-caption">
+                    <h3 style="color: yellow">Consulting</h3>
+                </div>
+            </ng-template>
+            <ng-template ngbSlide>
+                <img src="../assets/img/banner-2.jpg" alt="Asset Management">
+                <div class="carousel-caption">
+                    <h3 style="color: yellow">Asset Management</h3>
+                </div>
+            </ng-template>
+            <ng-template ngbSlide>
+                <img src="../assets/img/banner-3.jpg" alt="Investment Strategy">
+                <div class="carousel-caption">
+                    <h3 style="color: yellow">Investment Strategy</h3>
+                </div>
+            </ng-template>
+            <ng-template ngbSlide>
+                <img src="../assets/img/banner-4.jpg" alt="Data Analytics">
+                <div class="carousel-caption">
+                    <h3 style="color: yellow">Data Analytics</h3>
+                </div>
+            </ng-template>
+          </ngb-carousel>
+          <br/>
+            <p> Variyas Global Solutions Inc. is a rapidly growing global IT services firm committed to enabling business and technology leaders orchestrate strategy and execution by providing IT services related to Asset Management, Salesforce Solutions, Testing Center of Excellence, Software Application Development, Maintenance, Staffing and Infrastructure Management.
+            Our technical & domain expertise, proficiency, commitment excellence in execution, together with customer centric approach makes us a trusted organization to work with and bring success to our relationship with clients.
+            <br/>
+            <br/>
+            Visit the main website : <a href="www.variyasinc.com"> Variyas</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

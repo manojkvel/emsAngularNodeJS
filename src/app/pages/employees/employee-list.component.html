@@ -1,0 +1,104 @@
+
+<div class=" content">
+
+	<div class='row'>
+	<div class='table-responsive' >
+		<table class='table' *ngIf='employees && employees.length'>
+			<thead>
+				<tr>
+					<th>Employee</th>
+					<th>Emp ID</th>
+					<th>First Name</th>
+					<th>Last Name</th>
+					<!--<th>Email</th>
+              <th>Primary Contact Number</th>
+              <th>Alternative Contact Number</th> -->
+							<th>Client Rate</th>
+							<th>Total Client Rate</th>
+							<th>Candidate Rate</th>
+							<th>Total Candidate Rate</th>
+							<th>Gross Profit</th>
+					<th>Salary Rate</th>
+					<th>Total Salary</th>
+					<!--th>Rate Card</th-->
+				</tr>
+			</thead>
+			<tbody>
+				<tr *ngFor="let employee of employees;let i = index;">
+					<td>
+							<!-- *ngIf='showImage'  -->
+						<img [src]='imageUrl'
+						[title]='employee.firstName' [style.width.px]='imageWidth'
+						[style.margin.px]='imageMargin'></td>
+					<td>
+					<!--	<button _ngcontent-imi-c1="" class="btn btn-info btn-block btn-fill"
+						data-target="#buy" data-toggle="modal"> Download Free </button>
+						 <button class="btn btn-primary btn-link" click="openDialog(employee)"> {{
+							employee.id }} </button> -->
+
+							<button class="btn btn-primary btn-link" (click)="open(employee)">{{
+ 							employee.id }} </button>
+						</td>
+				<!--	<td></td>-->
+					<td>{{ employee.firstName }}</td>
+					<!-- | convertToSpaces: '-'-->
+					<td>{{ employee.lastName }}</td>
+					<td>{{ employee.clientRate | currency:'USD':'symbol':'1.2-2'}}</td>
+					<td>{{ getTotalClientRate(employee) | currency:'USD':'symbol':'1.2-2'}}</td>
+					<td>{{ employee.candidateRate | currency:'USD':'symbol':'1.2-2'}}</td>
+					<td>{{ getTotalCandidateRate(employee) | currency:'USD':'symbol':'1.2-2'}}</td>
+					<td>{{ getGrossProfit(employee) | currency:'USD':'symbol':'1.2-2'}}</td>
+					<td>{{ employee.salaryRate | currency:'USD':'symbol':'1.2-2'}}</td>
+					<td>{{ getTotalSalary(employee) | currency:'USD':'symbol':'1.2-2'}}</td>
+					<!--td>
+
+<div class="ratemap-container mat-elevation-z8">
+          	<table mat-table [dataSource]="employee.empMonthlyRateMap">
+
+						<	<ng-container matColumnDef="Index">
+							<th mat-header-cell *matHeaderCellDef>#</th>
+							<td mat-cell *matCellDef="let element;let j = index;" style="width:50px">{{j}}</td>
+							<td mat-footer-cell *matFooterCellDef style="width:50px;font-weight: bold;color:#ABC">Total</td>
+            </ng-container>
+
+							   <ng-container matColumnDef="Month">
+                <th mat-header-cell *matHeaderCellDef>Month</th>
+                <td mat-cell *matCellDef="let element" style="width:75px"> {{element.monYear}} </td>
+                <td mat-footer-cell *matFooterCellDef style="width:75px"> </td>
+                </ng-container>
+
+                <ng-container matColumnDef="NumOfHrs">
+                <th mat-header-cell *matHeaderCellDef># of Hours</th>
+                <td mat-cell *matCellDef="let element" style="width:50px">{{element.numOfHours}}</td>
+                <td mat-footer-cell *matFooterCellDef style="width:50px">{{getTotalnumOfHours(employee)}}</td>
+                </ng-container>
+
+                <ng-container matColumnDef="Invoice">
+  							<th mat-header-cell *matHeaderCellDef>Invoice</th>
+  							<td mat-cell *matCellDef="let element" style="width:50px">{{element.inv}}</td>
+  							<td mat-footer-cell *matFooterCellDef style="width:50px"></td>
+  							</ng-container>
+
+                <ng-container matColumnDef="Salary">
+  							<th mat-header-cell *matHeaderCellDef>Salary</th>
+  							<td mat-cell *matCellDef="let element" style="width:50px">{{element.salary | currency}}</td>
+  							<td mat-footer-cell *matFooterCellDef style="width:50px"></td>
+  							</ng-container>
+
+
+							<tr mat-header-row *matHeaderRowDef="displayedColumns;sticky:true"></tr>
+							<tr mat-row *matRowDef="let row; columns: displayedColumns;" ></tr>
+							<tr mat-footer-row *matFooterRowDef="displayedColumns;sticky:true;" (click)=colClick(element)></tr>
+						</table>
+</div>
+					</td-->
+
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div *ngIf='errorMessage' class='alert alert-danger'>Error: {{
+		errorMessage }}</div>
+
+
+</div>

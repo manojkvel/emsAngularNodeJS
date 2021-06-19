@@ -1,0 +1,34 @@
+<div class=" content" style="scroll:auto">
+  <div class=" row">
+    <div class=" col-md-12">
+    <div class=" card">
+      <div class=" card-header">
+        <h4 class=" card-title">Rate Card for {{employee.lastName}}, {{employee.firstName}}</h4>
+        <p class=" category">Total number of hours : {{getTotalnumOfHours(employee)}}</p>
+      </div>
+      <div class=" card-body">
+      <div class="table-responsive">
+        <table class="table tablesorter" >
+            <thead class="text-primary">
+        								<tr>
+    									<th>Month</th>
+    									<th>Num of Hrs</th>
+    									<th>Invoice</th>
+    									<th class="text-center">Salary</th>
+    								</tr>
+    							</thead>
+    							<tbody>
+    								<tr *ngFor="let element of employee.empMonthlyRateMap">
+    									<td>{{element.monYear}}</td>
+    									<td>{{element.numOfHours}}</td>
+    									<td>{{element.inv}}</td>
+    									<td class="text-center">{{element.salary}}</td>
+    								</tr>
+    							</tbody>
+    						</table>
+</div>
+</div>
+  </div>
+  </div>
+  </div>
+  </div>
